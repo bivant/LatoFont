@@ -42,6 +42,7 @@ extension UIFont {
                     if (url != nil) {
                         var errorRef: Unmanaged<CFError>?
                         CTFontManagerRegisterFontsForURL(url! as CFURL, .none, &errorRef)
+                        errorRef?.release()
                     }
                 }
             }
